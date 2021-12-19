@@ -78,6 +78,8 @@ namespace PhotosApp
             app.UseSerilogRequestLogging();
 
             app.UseRouting();
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("default", "{controller=Photos}/{action=Index}/{id?}");
